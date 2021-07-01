@@ -5,7 +5,7 @@ license 'All Rights Reserved'
 description 'Installs/Configures lb_docker_host'
 version '0.1.0'
 chef_version '>= 15.0'
-
+depends 'docker', '= 7.7.0'
 # The `issues_url` points to the location where issues for this cookbook are
 # tracked.  A `View Issues` link will be displayed on this cookbook's page when
 # uploaded to a Supermarket.
