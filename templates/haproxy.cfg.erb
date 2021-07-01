@@ -1,0 +1,10 @@
+frontend http-in
+default_backend container_backend
+bind *:80
+
+backend container_backend
+balance roundrobin
+
+<% @web_host_list.each do |one_iteration| -%>
+  server <%= one_iteration['cloud']['public_hostname'] %> <%= one_iteration['cloud']['public_ipv4'] %>:80 check
+<% end -%>
